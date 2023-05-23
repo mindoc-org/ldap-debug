@@ -1,19 +1,45 @@
+## 一、项目搭建记录
 ```bash
 # 项目结构搭建
 mkdir ldap-debug
 cd ldap-debug/
 go mod init ldap-debug
-touch main.go
-
-# 环境变量设置
-set GO111MODULE=on
-set GOPROXY=https://proxy.golang.com.cn,direct
-# go包安装
+# Go包 ldap 安装
 go get github.com/go-ldap/ldap/v3
-# go mod tidy -v
+touch main.go
+```
 
+## 二、自行尝试
+>  国内加速克隆:
+> `git clone https://ghproxy.com/https://github.com/mindoc-org/ldap-debug.git`
+
+### (一)、克隆项目
+```bash
+git clone https://github.com/mindoc-org/ldap-debug.git
+cd ldap-debug
+```
+
+### (二)、设置Go包源加速和安装Go包
+```bash
+# 启用 Go Mod
+set GO111MODULE=on
+# 使用国内源
+set GOPROXY=https://proxy.golang.com.cn,direct
+# 安装Go包
+go mod tidy -v
+```
+### (三)、Windows 编译&运行
+```bash
 # 编译
 go build -o ldap-debug.exe main.go
 # 运行
 .\ldap-debug.exe
+```
+
+### (四)、Linux 编译&运行
+```bash
+# 编译
+go build -o ldap-debug main.go
+# 运行
+./ldap-debug
 ```
